@@ -1,0 +1,2 @@
+class DizisController < ApplicationController
+end
