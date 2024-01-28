@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favoris
   resources :favorites
   resources :users
   resources :dizis
