@@ -1,5 +1,9 @@
 class Dizi < ApplicationRecord
 
+    has_many :favoris
+    has_many :users, through: :favoris
+
+
     def self.seri
         require 'uri'
         require 'net/http'
