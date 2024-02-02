@@ -6,14 +6,14 @@ class FavorisController < ApplicationController
     end
 
     def create
-        favori = Favori.create(favoris_params)
+        favori = Favori.create(favori_params)
         render json: favori
     end
 
     private
 
-    def favoris_params
-        params.require(:favori).permit(:dizi_id, :user_id)
+    def favori_params
+        params.require(:favori).permit(:user_id , :dizi_id)
     end
 
 end
