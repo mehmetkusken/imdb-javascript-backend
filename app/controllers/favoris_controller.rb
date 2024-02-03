@@ -7,7 +7,13 @@ class FavorisController < ApplicationController
 
     def create
         favori = Favori.create(favori_params)
-        render json: favori
+        render json: {message: 'Serie added to Favorite List'}
+    end
+
+    def destroy
+        favori = Favori.find(params[:id])
+        favori.destroy
+        render json: {message: 'Serie deleted From List'}
     end
 
     private

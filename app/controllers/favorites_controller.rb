@@ -13,13 +13,6 @@ class FavoritesController < ApplicationController
         render json: {message: 'Movie added to Favorite List'}
     end
 
-    def show
-        favorite = Favorite.find(params[:id])
-        render json: favorite
-
-    end
-
-
     def destroy
         favorite = Favorite.find(params[:id])
         favorite.destroy
@@ -29,7 +22,7 @@ class FavoritesController < ApplicationController
     private
 
     def favorite_params
-        params.require(:favorite).permit(:id, :movie_id, :user_id)
+        params.require(:favorite).permit(:movie_id, :user_id)
     end
     
     
